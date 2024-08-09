@@ -67,7 +67,8 @@ This process should be automatic and triggered by a push to the GitHub master br
 [GitHub-MedicureApp-Link](https://github.com/shubhamkushwah123/medicure-app.git)
 
 ## How to run the app
-- mvn spring-boot:run
+- Build App : mvn clean package
+- Run App : mvn spring-boot:run
 - access using the url : http://ipaddress:8082/
 
 ## How to submit the project the project : 
