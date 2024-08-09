@@ -24,7 +24,7 @@ Medicure aims to centrally manage all doctors' and patients' data across its hos
 
 ### Solution Implementation
 
-Develop a Mavenized microservice using Spring Boot and an in-memory H2 database.
+You already have the application setup in the source code repository.
 
 #### Microservice Requirements
 
@@ -38,38 +38,30 @@ Develop a Mavenized microservice using Spring Boot and an in-memory H2 database.
    - **/deleteDoctor/{doctorRegNo}** (HTTP Method: DELETE)  
      No Request Body
 
-2. Write necessary JUnit test cases.
-3. Generate HTML report using TestNG.
-4. Push code into your GitHub Repository.
+2. Push code into your GitHub Repository.
    
-   **Note:** Preload some data into the database.
 
 ### Continuous Integration & Continuous Deployment Tools
 
 - **Git**: For version control.
+- **Maven**: For Building and Packaging Application.
 - **Jenkins**: For continuous integration and deployment.
 - **Docker**: For containerizing applications.
 - **Ansible**: Configuration management tool.
 - **Selenium**: For automating tests on the deployed web application.
 - **Terraform**: For infrastructure creation.
-- **Kubernetes**: For running containerized applications in a managed cluster.
 
 ### Business Challenge/Requirement
 
 When a developer pushes the updated code to the GIT master branch:
 1. The Jenkins pipeline should be triggered.
 2. Code should be checked out, compiled, tested, packaged, and containerized.
-3. A new EKS test-cluster should be provisioned and configured automatically with all the required software.
-4. Once the cluster is healthy and available, the application must be deployed to the test-server automatically using Kubernetes.
-5. The deployment should be tested using a test automation tool.
+3. Terraform should provision the test and prd environment. (2 separate ec2 instances)
+4. Ansible should configure the provisioned machine and deploy the application to a test environment.
+5. The Contact page should be tested using a test automation tool using Selenium.
+6. Upon successful testing, Ansible should deploy the application to the prd environment.
 
 This process should be automatic and triggered by a push to the GitHub master branch.
-
-### Kubernetes Cluster Requirements
-
-- Must contain at least 2 servers.
-- Must be continuously monitored using Prometheus.
-- Dashboard must be visualized using Grafana.
 
 ## Application source code is available at the following link
 [GitHub-MedicureApp-Link](https://github.com/shubhamkushwah123/medicure-app.git)
